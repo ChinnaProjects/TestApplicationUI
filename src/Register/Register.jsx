@@ -1,17 +1,19 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
+
 export const Register = () => {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [successmsg, setSuccessmsg] = useState();
-  const [errormsg, setErrorMsg] = useState();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [successmsg, setSuccessmsg] = useState("");
+  const [errormsg, setErrorMsg] = useState("");
+
   const submit = async () => {
     const data = {
-      name: name,
-      email: email,
-      password: password,
+      name,
+      email,
+      password,
     };
     try {
       const result = await axios.post(
@@ -21,9 +23,11 @@ export const Register = () => {
       console.log(result);
       setSuccessmsg("Registration is Successful");
     } catch (error) {
-      setErrorMsg("Registration is failed");
+      console.error("Error during registration:", error);
+      setErrorMsg(error.response?.data || "Registration failed");
     }
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     submit();
@@ -31,6 +35,7 @@ export const Register = () => {
     setEmail("");
     setPassword("");
   };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
