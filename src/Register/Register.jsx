@@ -40,6 +40,7 @@ export const Register = () => {
           id="name"
           name="name"
           placeholder="Enter your Name"
+          value={name}
         />
         <br />
         <label>Email: </label>
@@ -48,6 +49,7 @@ export const Register = () => {
           id="email"
           name="email"
           placeholder="Enter Your Email"
+          value={email}
         />
         <br />
         <label>Password: </label>
@@ -56,6 +58,7 @@ export const Register = () => {
           id="password"
           name="password"
           placeholder="Enter your Password"
+          value={password}
         />
         <br />
         <button type="submit">Register</button>
