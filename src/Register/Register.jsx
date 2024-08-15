@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import axios from "axios";
 export const Register = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
