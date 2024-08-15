@@ -15,7 +15,7 @@ export const Register = () => {
     };
     try {
       const result = await axios.post(
-        "https://test-application-be.vercel.app/registration",
+        "http://localhost:3002/registration",
         data
       );
       console.log(result);
