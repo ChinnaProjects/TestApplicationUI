@@ -41,6 +41,7 @@ export const Register = () => {
           name="name"
           placeholder="Enter your Name"
           value={name}
+          onChange={(event) => setName(event.target.value)}
         />
         <br />
         <label>Email: </label>
@@ -50,6 +51,7 @@ export const Register = () => {
           name="email"
           placeholder="Enter Your Email"
           value={email}
+          onChange={(event) => setEmail(event.target.value)}
         />
         <br />
         <label>Password: </label>
@@ -59,6 +61,7 @@ export const Register = () => {
           name="password"
           placeholder="Enter your Password"
           value={password}
+          onChange={(event) => setPassword(event.target.value)}
         />
         <br />
         <button type="submit">Register</button>
